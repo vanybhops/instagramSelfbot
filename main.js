@@ -1,36 +1,51 @@
-const { getAccountInfo, 
-        getUserInfo, 
-        followUser,
-        unfollowUser, 
-        removeFollower, 
-        likePost, 
-        unlikePost, 
-        commentPost,
-        savePost,
-        unsavePost} = require("./utils/api");
-const { login, logout} = require("./utils/client");
+const {
+  getAccountInfo,
+  getUserInfo,
+  followUser,
+  unfollowUser,
+  removeFollower,
+  likePost,
+  unlikePost,
+  commentPost,
+  savePost,
+  unsavePost,
+  createNewPost,
+} = require("./utils/api");
+const { login, logout } = require("./utils/client");
 
-(async()=>{
+(async () => {
+  let data = await login("vany.patky", "password");
+  if (!data.authenticated) {
+    console.log("wrong password or you have 2fa enabled!", data);
+    return;
+  }
+  getAccountInfo();
+  getUserInfo("vanybhops");
 
-    let data = await login("vany.patky", "password")
-    if (!data.authenticated) {
+  followUser("vanybhops");
+  unfollowUser("vanybhops");
+  removeFollower("vanybhops");
 
-        console.log("wrong password or you have 2fa enabled!", data)
-        return
-    }
-    //getAccountInfo();
-    //getUserInfo("vanybhops");
+  likePost(
+    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0"
+  );
+  unlikePost(
+    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0"
+  );
 
-    //followUser("vanybhops");
-    //unfollowUser("vanybhops");
-    //removeFollower("vanybhops");
+  commentPost(
+    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0",
+    "test comment"
+  );
 
-    //likePost("https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0");
-    //unlikePost("https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0");
+  savePost(
+    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0"
+  );
+  unsavePost(
+    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0"
+  );
 
-    //commentPost("https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0", "test comment");
+  createNewPost("test.jpeg", "test2");
 
-    //savePost("https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0")
-    //unsavePost("https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0")
-    logout()
-})()
+  logout();
+})();

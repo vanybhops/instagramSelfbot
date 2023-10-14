@@ -1,5 +1,5 @@
-const { request } = require("../../request")
-const getPostId = require("./getPostId")
+const { request } = require("../../request");
+const getPostId = require("./getPostId");
 
 /**
  * Description - Comments specified post.
@@ -8,20 +8,19 @@ const getPostId = require("./getPostId")
  * @returns {boolean}
  */
 
-async function likePost(link, comment){
-    let postId = await getPostId(link)
-    return request.send(
-        `https://www.instagram.com/api/v1/web/comments/${postId}/add/`,
-        {
-            method:"POST",
-            headers:{
-                "content-type": "application/x-www-form-urlencoded",
-            },
-            body: "comment_text=" + comment
-        }
-        ).then(resp=> {
-            let data = JSON.parse(resp)
-            return data.status == "ok"
-        })
+async function likePost(link, comment) {
+  let postId = await getPostId(link);
+  return request
+    .send(`https://www.instagram.com/api/v1/web/comments/${postId}/add/`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/x-www-form-urlencoded",
+      },
+      body: "comment_text=" + comment,
+    })
+    .then((resp) => {
+      let data = JSON.parse(resp);
+      return data.status == "ok";
+    });
 }
-module.exports = likePost
+module.exports = likePost;

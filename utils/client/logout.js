@@ -4,10 +4,10 @@ const { request } = require("../request/index");
  * @param { string } username
  * @param { string } password
  * @returns { object }
-*/
-async function logout (){
-    request.send("https://www.instagram.com/api/v1/web/accounts/logout/ajax/",{
-        method:"POST"
-    })
+ */
+async function logout() {
+  request.send("https://www.instagram.com/api/v1/web/accounts/logout/ajax/", {
+    method: "POST",
+  });
 }
-module.exports = logout
+module.exports = logout;
