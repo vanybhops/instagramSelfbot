@@ -18,6 +18,3 @@ Instagram's private APIclient
 - [ ] create new dm with targeted user
 - [ ] message targeted user
 - [ ] change bio
-
-# POC
-![](https://github.com/vanybhops/instApi/blob/main/instapoc.gif)
