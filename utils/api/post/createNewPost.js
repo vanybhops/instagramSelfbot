@@ -2,7 +2,7 @@ const { request } = require("../../request");
 const sizeOf = require("image-size");
 const fs = require("fs");
 /**
- * Description - Gets latest posts of specified user.
+ * Description - Creates new post with specifie image and caption.
  * @param {string} imagePath
  * @param {string} caption
  * @returns { Array }
