@@ -1,5 +1,5 @@
 module.exports = {
-    getAccountInfo : require("./account_data/getAccountInfo"),
+    getAccountInfo : require("../client/getAccountInfo"),
     
     getUserInfo : require("./user/getUserInfo"),
 

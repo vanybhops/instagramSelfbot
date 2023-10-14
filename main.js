@@ -8,7 +8,7 @@ const { getAccountInfo,
         commentPost,
         savePost,
         unsavePost} = require("./utils/api");
-const { login } = require("./utils/login_manager");
+const { login, logout} = require("./utils/client");
 
 (async()=>{
 
@@ -32,5 +32,5 @@ const { login } = require("./utils/login_manager");
 
     //savePost("https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0")
     //unsavePost("https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0")
-    
+    logout()
 })()
