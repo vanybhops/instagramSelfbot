@@ -5,7 +5,7 @@ const fs = require("fs");
  * Description - Creates new post with specifie image and caption.
  * @param {string} imagePath
  * @param {string} caption
- * @returns { Array }
+ * @returns { boolean }
  */
 function createNewPost(imagePath, caption) {
   let uploadId = Date.now();
