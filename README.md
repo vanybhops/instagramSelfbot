@@ -13,7 +13,8 @@ Instagram's private APIclient
 - [x] save targeted post
 - [x] unsave targeted post
 - [x] create new post with custom caption
-- [ ] like targeted story
+- [x] like targeted story
+- [x] unlike targeted story
 - [ ] reply to targeted story
 - [ ] react to targeted story
 - [ ] create new dm with targeted user
