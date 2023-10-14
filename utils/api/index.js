@@ -18,4 +18,7 @@ module.exports = {
   unlikePost: require("./post/unlikePost"),
 
   createNewPost: require("./post/createNewPost"),
+
+  likeStory: require("./story/likeStory"),
+  unlikeStory: require("./story/unlikeStory"), 
 };

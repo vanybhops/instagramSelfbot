@@ -10,6 +10,8 @@ const {
   savePost,
   unsavePost,
   createNewPost,
+  likeStory,
+  unlikeStory
 } = require("./utils/api");
 const { login, logout } = require("./utils/client");
 
@@ -46,6 +48,9 @@ const { login, logout } = require("./utils/client");
   );
 
   createNewPost("test.jpeg", "test2");
+
+  likeStory('https://www.instagram.com/stories/vanybhops/3213712222328329600/')
+  unlikeStory('https://www.instagram.com/stories/vanybhops/3213712222328329600/')
 
   logout();
 })();
