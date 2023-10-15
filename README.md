@@ -20,3 +20,6 @@ Instagram's private APIclient
 - [ ] create new dm with targeted user
 - [ ] message targeted user
 - [ ] change bio
+- [ ] change profile picture
+- [ ] change username
+- [ ] change nick
