@@ -11,12 +11,12 @@ const {
   unsavePost,
   createNewPost,
   likeStory,
-  unlikeStory
+  unlikeStory,
 } = require("./utils/api");
-const { login, logout } = require("./utils/client");
+const { login, logout, changeClientInfo } = require("./utils/client");
 
 (async () => {
-  let data = await login("vany.patky", "password");
+  let data = await login("vanybhops", "super secret password");
   if (!data.authenticated) {
     console.log("wrong password or you have 2fa enabled!", data);
     return;
@@ -29,22 +29,22 @@ const { login, logout } = require("./utils/client");
   removeFollower("vanybhops");
 
   likePost(
-    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0"
+    "https://www.instagram.com/p/Cya_zGAtUbg"
   );
   unlikePost(
-    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0"
+    "https://www.instagram.com/p/Cya_zGAtUbg"
   );
 
   commentPost(
-    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0",
+    "https://www.instagram.com/p/Cya_zGAtUbg",
     "test comment"
   );
 
   savePost(
-    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0"
+    "https://www.instagram.com/p/Cya_zGAtUbg"
   );
   unsavePost(
-    "https://www.instagram.com/p/CyZGow6tkEY5rEzuiCwNFLGRRmOwIalJxQXwik0"
+    "https://www.instagram.com/p/Cya_zGAtUbg"
   );
 
   createNewPost("test.jpeg", "test2");
@@ -53,4 +53,11 @@ const { login, logout } = require("./utils/client");
   unlikeStory('https://www.instagram.com/stories/vanybhops/3213712222328329600/')
 
   logout();
+  changeClientInfo({
+    username: "vany.patky2",
+    biography: "vany",
+    nickname: "vany",
+    email: "vanycodes@gmail.com",
+    url: "https://github.com/vanybhops",
+  });
 })();
