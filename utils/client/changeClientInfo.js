@@ -38,7 +38,6 @@ async function changeClientInfo({
     })
     .then((resp) => {
       let data = JSON.parse(resp);
-      console.log(data)
       return data.status == "ok";
     });
 }
