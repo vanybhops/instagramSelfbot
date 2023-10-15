@@ -19,7 +19,7 @@ Instagram's private APIclient
 - [ ] react to targeted story
 - [ ] create new dm with targeted user
 - [ ] message targeted user
-- [ ] change bio
+- [x] change bio
 - [ ] change profile picture
-- [ ] change username
-- [ ] change nick
+- [x] change username
+- [x] change nick
