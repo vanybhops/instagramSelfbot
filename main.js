@@ -13,7 +13,8 @@ const {
   likeStory,
   unlikeStory,
 } = require("./utils/api");
-const { login, logout, changeClientInfo } = require("./utils/client");
+const { login, logout, changeClientInfo, changeClientProfilePicture } = require("./utils/client");
+const { request } = require("./utils/request");
 
 (async () => {
   let data = await login("vanybhops", "super secret password");
@@ -21,43 +22,45 @@ const { login, logout, changeClientInfo } = require("./utils/client");
     console.log("wrong password or you have 2fa enabled!", data);
     return;
   }
-  getAccountInfo();
-  getUserInfo("vanybhops");
+  // getAccountInfo();
+  // getUserInfo("vanybhops");
 
-  followUser("vanybhops");
-  unfollowUser("vanybhops");
-  removeFollower("vanybhops");
+  // followUser("vanybhops");
+  // unfollowUser("vanybhops");
+  // removeFollower("vanybhops");
 
-  likePost(
-    "https://www.instagram.com/p/Cya_zGAtUbg"
-  );
-  unlikePost(
-    "https://www.instagram.com/p/Cya_zGAtUbg"
-  );
+  // likePost(
+  //   "https://www.instagram.com/p/Cya_zGAtUbg"
+  // );
+  // unlikePost(
+  //   "https://www.instagram.com/p/Cya_zGAtUbg"
+  // );
 
-  commentPost(
-    "https://www.instagram.com/p/Cya_zGAtUbg",
-    "test comment"
-  );
+  // commentPost(
+  //   "https://www.instagram.com/p/Cya_zGAtUbg",
+  //   "test comment"
+  // );
 
-  savePost(
-    "https://www.instagram.com/p/Cya_zGAtUbg"
-  );
-  unsavePost(
-    "https://www.instagram.com/p/Cya_zGAtUbg"
-  );
+  // savePost(
+  //   "https://www.instagram.com/p/Cya_zGAtUbg"
+  // );
+  // unsavePost(
+  //   "https://www.instagram.com/p/Cya_zGAtUbg"
+  // );
 
-  createNewPost("test.jpeg", "test2");
+  // createNewPost("test.jpeg", "test2");
 
-  likeStory('https://www.instagram.com/stories/vanybhops/3213712222328329600/')
-  unlikeStory('https://www.instagram.com/stories/vanybhops/3213712222328329600/')
+  // likeStory('https://www.instagram.com/stories/vanybhops/3213712222328329600/')
+  // unlikeStory('https://www.instagram.com/stories/vanybhops/3213712222328329600/')
 
-  logout();
-  changeClientInfo({
-    username: "vany.patky2",
-    biography: "vany",
-    nickname: "vany",
-    email: "vanycodes@gmail.com",
-    url: "https://github.com/vanybhops",
-  });
+  // logout();
+  // changeClientInfo({
+  //   username: "vany.patky2",
+  //   biography: "vany",
+  //   nickname: "vany",
+  //   email: "vanycodes@gmail.com",
+  //   url: "https://github.com/vanybhops",
+  // });
+  //console.log(await changeClientProfilePicture("test.jpeg"))
+  changeClientProfilePicture("profilepic.png")
 })();

@@ -24,8 +24,7 @@ module.exports = async () => {
       request.app_id = String(resp.match(/(?<="X-IG-App-ID":")[0-9]*/gm));
       request.cookies += `csrftoken=${request.csrf_token}; `;
       request.cookies += `ig_did=${request.device_id}; `;
-
-      request.initialized = true;
+      request.initialized = true
     });
   await request.send("https://www.instagram.com/api/v1/public/landing_info/", {
     referrer: "https://www.instagram.com/",
