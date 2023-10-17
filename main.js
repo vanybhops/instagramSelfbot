@@ -61,6 +61,6 @@ const { request } = require("./utils/request");
     email: "vanycodes@gmail.com",
     url: "https://github.com/vanybhops",
   });
-  /onsole.log(await changeClientProfilePicture("test.jpeg"))
+  changeClientProfilePicture("test.jpeg")
   changeClientProfilePicture("profilepic.png")
 })();
